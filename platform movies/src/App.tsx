@@ -27,7 +27,7 @@ function App() {
       </div>
       <p className="read-the-docs">
         grupo conformado por milton charly armando
-        <p> grupo de platafoma de pelicualas         </p>
+        <p> grupo de platafoma de PELICULAS         </p>
       </p>
     </>
   )
