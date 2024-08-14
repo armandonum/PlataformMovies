@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import '../../styles/header.css';
+import './header.css';
 
 type HeaderProps = {
     title: string;

@@ -1,4 +1,4 @@
-import MovieList from '../../context/MovieList';
+import MovieList from '../../../context/MovieList';
 import './Movie.css'; // Importa los estilos desde el archivo CSS
 
 export const Movie = () => {

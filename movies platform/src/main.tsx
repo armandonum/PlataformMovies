@@ -6,9 +6,9 @@ import { createRoot } from 'react-dom/client'
 import App from './App.tsx'
 import './index.css'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
-import{ Movie} from './components/pages/NewMovie.tsx'
+import{ Movie} from './components/pages/newMovie/NewMovie'
 import Template from './components/templates/template'
-import Genere from './components/pages/Genere.tsx'
+import Genere from './components/pages/Genere/Genere.tsx'
 
 
 const routes =createBrowserRouter([
