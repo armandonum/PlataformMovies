@@ -26,12 +26,12 @@ const routes =[
 
 function Template({ children }: Props) {
     return (
-        <div>
-         
+        <div style={{ paddingTop: '60px' }}> {/* Ajusta según la altura del header */}
             <Header title="" links={routes} />
             {children}
         </div>
     );
 }
+
 
 export default Template;
