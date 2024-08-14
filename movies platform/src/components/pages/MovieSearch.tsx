@@ -1,7 +1,7 @@
-import React, { useState } from 'react';
+import  { useState } from 'react';
 
 
-function MovieSearch({ onSearch }: { onSearch: (query: string) => void }) {
+export function MovieSearch({ onSearch }: { onSearch: (query: string) => void }) {
     const [query, setQuery] = useState('');
   
     const handleSearch = () => {
@@ -20,4 +20,3 @@ function MovieSearch({ onSearch }: { onSearch: (query: string) => void }) {
       </div>
     );
   }
-  

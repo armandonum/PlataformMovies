@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import  { useState } from 'react';
 import useMovie from '../hooks/useFetchMovies';
 import '../styles/MovieList.css';
 

@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { useEffect } from 'react';
 
-function MovieDetails({ movieId }: { movieId: number }) {
+export function MovieDetails({ movieId }: { movieId: number }) {
   const [details, setDetails] = useState<{ title: string; overview: string; backdrop_path: string } | null>(null);
 
   useEffect(() => {
