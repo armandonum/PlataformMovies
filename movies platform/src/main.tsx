@@ -8,6 +8,7 @@ import './index.css'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import{ Movie} from './components/pages/NewMovie.tsx'
 import Template from './components/templates/template'
+import Genere from './components/pages/Genere.tsx'
 
 
 const routes =createBrowserRouter([
@@ -18,6 +19,10 @@ const routes =createBrowserRouter([
   {
     path: '/NewMovie',
     element: <Template><Movie /></Template>
+  },
+  {
+    path: '/Genere',
+    element: <Template><Genere /></Template>
   },
  
 ]
