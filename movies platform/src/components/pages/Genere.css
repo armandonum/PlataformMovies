@@ -1,0 +1,99 @@
+/* Genere.css */
+.genere-container {
+  background-color: #1e90ff; /* Azul */
+  padding: 20px;
+  min-height: 100vh;
+}
+
+.genere-title {
+  font-size: 2em;
+  margin-bottom: 20px;
+  color: white;
+  text-align: center;
+}
+
+.genre-section {
+  margin-bottom: 40px;
+}
+
+.genre-title {
+  font-size: 1.5em;
+  color: rgb(204, 16, 16);
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.genre-list {
+  display: flex;
+  flex-wrap: wrap; /* Ajusta el contenido en múltiples líneas si es necesario */
+  gap: 20px;
+  justify-content: center; /* Centra los elementos */
+}
+
+.genre-item {
+  background-color: #911111;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+  width: 150px; /* Ajusta el tamaño */
+  text-align: center;
+  padding: 10px;
+}
+
+.genre-item:hover {
+  transform: scale(1.05);
+}
+
+.genre-item img {
+  width: 100%;
+  height: auto; /* Mantiene la proporción de la imagen */
+  max-height: 100px; /* Ajusta el tamaño de la imagen */
+  object-fit: cover;
+}
+
+.genre-item-title, .genre-item-overview {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.6); /* Fondo oscuro */
+  color: white;
+  padding: 10px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  text-align: center;
+}
+
+.genre-item:hover .genre-item-title, .genre-item:hover .genre-item-overview {
+  opacity: 1;
+}
+
+.movie-list {
+  display: flex;
+  flex-wrap: wrap; /* Ajusta el contenido en múltiples líneas si es necesario */
+  gap: 20px;
+  justify-content: center; /* Centra los elementos */
+}
+
+.movie-item {
+  display: flex;
+  flex-direction: column;
+  background-color: rgb(9, 10, 10);
+  border-radius: 10px; /* Añadido para mejorar la apariencia */
+  overflow: hidden; /* Añadido para mantener las imágenes dentro del contenedor */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+  width: 200px; /* Ajusta el tamaño */
+}
+
+.movie-item img {
+  width: 100%;
+  height: auto;
+  max-height: 300px; /* Ajusta el tamaño de la imagen */
+  object-fit: cover;
+}
+
+.movie-item:hover {
+  transform: scale(1.05);
+}
