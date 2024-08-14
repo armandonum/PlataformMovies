@@ -8,11 +8,27 @@
 
   .coming-soon-section {
     padding: 20px;
-    background-color: #db1b1b;
     margin-top: 20px;
+  }
+  .currently-playing{
+    padding: 20px;
+  
+    margin-top: 20px;
+  }
+  .currently-playing h2{
+    display: flex;
+    justify-self: start;
+   
+  
+    margin: 10px 0;
+    color: #000;
   }
   
   .coming-soon-section h2 {
+    display: flex;
+    justify-self: start;
+
+  
     margin: 10px 0;
     color: #000;
   }

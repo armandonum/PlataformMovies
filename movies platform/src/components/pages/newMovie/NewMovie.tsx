@@ -1,6 +1,7 @@
 import MovieList from '../../../context/MovieList';
-import './Movie.css'; // Importa los estilos desde el archivo CSS
-
+import './Movie.css'; 
+import UpcomingMoviesList from './MovieList/UpcomingMoviesList';
+import CurrentlyPlayingMoviesList from './MovieList/CurrentlyPlayingMoviesList';
 export const Movie = () => {
   return (
    <div className='movie-container'>
@@ -9,17 +10,21 @@ export const Movie = () => {
         <MovieList />
       </div>
 
-      <div className="coming-soon-section">
-        <h2>Coming soon</h2>
-        <div className="coming-soon-list">
-          <p>Próximamente... (Puedes añadir otra lista aquí)</p>
+      <div className="currently-playing">
+        <h2>currently playing</h2>
+        <div className="currently-plaing-list">
+          
+          <CurrentlyPlayingMoviesList />
         </div>
+        
+        
       </div>
 
       <div className="coming-soon-section">
         <h2>Coming soon</h2>
         <div className="coming-soon-list">
-          <p>Próximamente... (Puedes añadir otra lista aquí)</p>
+          
+        <UpcomingMoviesList />
         </div>
       </div>
 
