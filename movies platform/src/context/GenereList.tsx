@@ -1,8 +1,8 @@
 import React from 'react';
 import useMovie from '../hooks/useFetchMovies';
-import './MovieList.css';
+import '../styles/GenereList.css';
 
-function MovieList() {
+function GenereList() {
   const { movies, loading, error } = useMovie();
 
   if (loading) return <p>Cargando...</p>;
@@ -26,5 +26,5 @@ function MovieList() {
   );
 }
 
-export default MovieList;
+export default GenereList;
 

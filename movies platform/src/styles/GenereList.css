@@ -1,0 +1,56 @@
+.movie-list {
+  display: flex;
+  
+  align-items: center;
+
+  overflow-x: auto;
+  padding: 10px;
+  background-color: rgb(222, 222, 222);
+}
+
+.movie-item {
+  display: flex;
+
+  flex-direction: column;
+  min-width: 200px;
+  margin-right: 10px;
+  position: relative;
+}
+
+.movie-item img {
+  cursor: pointer;
+  width: 150px; /* Aumenta el tamaño de las imágenes */
+  transition: transform 1s, z-index 1s; /* Añade transición para z-index */
+}
+
+.movie-item img:hover {
+  transform: scale(1.5);
+  position: relative; 
+  z-index: 10; /* Asegura que la imagen esté por encima de otros elementos */
+}
+
+/* Media Queries para hacer el diseño responsivo */
+@media (max-width: 1024px) {
+  .movie-list {
+    flex-wrap: wrap; /* Permite que los elementos se envuelvan en pantallas más pequeñas */
+  }
+
+  .movie-item {
+    flex: 1 1 48%; /* Dos elementos por fila en pantallas medianas */
+    margin-right: 1%; /* Ajusta el margen para que los elementos se alineen correctamente */
+  }
+}
+
+@media (max-width: 768px) {
+  .movie-item {
+    flex: 1 1 100%; /* Un elemento por fila en pantallas pequeñas */
+    margin-right: 0; /* Elimina el margen derecho */
+    margin-bottom: 10px; /* Añade margen inferior para separar los elementos */
+  }
+}
+
+@media (max-width: 480px) {
+  .movie-item img {
+    width: 100%; /* Asegura que las imágenes ocupen todo el ancho del contenedor */
+  }
+}

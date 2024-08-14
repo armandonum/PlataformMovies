@@ -1,5 +1,4 @@
-import Header from "./header";
-
+import Header from "./header"
 type Props= {
     children: React.ReactNode;
 };
@@ -28,12 +27,9 @@ const routes =[
 function Template({ children }: Props) {
     return (
         <div>
+         
             <Header title="" links={routes} />
             {children}
-            <footer>
-            
-            &copy; { new Date().getFullYear() }
-        </footer>
         </div>
     );
 }
