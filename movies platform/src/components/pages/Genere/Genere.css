@@ -1,7 +1,7 @@
 .genere-container {
   background-color: #000; /* Fondo negro */
   color: #fff; /* Texto blanco */
-  padding: 20px;
+  padding: 10px;
   min-height: 100vh;
   display: flex;
   flex-direction: column;

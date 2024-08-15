@@ -3,31 +3,19 @@ import './Movie.css'; // Importa los estilos desde el archivo CSS
 
 export const Movie = () => {
   return (
-   <div className='movie-container'>
-
-<div className="movie-list-container">
-        <MovieList />
-      </div>
+    <div className="movie-list-container">
+      <MovieList />
 
       <div className="coming-soon-section">
-        <h2>Coming soon</h2>
+        <h2>Coming Soon</h2>
         <div className="coming-soon-list">
-          <p>Próximamente... (Puedes añadir otra lista aquí)</p>
+          {/* Aquí puedes agregar una lista de películas que están por venir */}
+          <div className="coming-soon-item">
+            <img src="https://via.placeholder.com/150" alt="Upcoming Movie" />
+            <p>Upcoming Movie 1</p>
+          </div>
         </div>
       </div>
-
-      <div className="coming-soon-section">
-        <h2>Coming soon</h2>
-        <div className="coming-soon-list">
-          <p>Próximamente... (Puedes añadir otra lista aquí)</p>
-        </div>
-      </div>
-
-      <footer className="movie-footer">
-        <p>© 2024 Movie Explorer. Todos los derechos reservados.</p>
-      </footer>
-   </div>
-      
-   
+    </div>
   );
-}
+};

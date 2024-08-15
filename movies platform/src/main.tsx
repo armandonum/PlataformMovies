@@ -9,12 +9,18 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import{ Movie} from './components/pages/newMovie/NewMovie'
 import Template from './components/templates/template'
 import Genere from './components/pages/Genere/Genere.tsx'
+import Home from './components/pages/Home/Home.tsx';
+
 
 
 const routes =createBrowserRouter([
   {
     path: '/',
     element: <Template><App /></Template>
+  },
+  {
+    path: '/Home',
+    element: <Template><Home /></Template>
   },
   {
     path: '/NewMovie',
