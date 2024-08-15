@@ -1,19 +1,22 @@
 .movie-list-container {
   padding: 0;
-  background-color: #000000; /* Fondo negro */
-  min-height: 100vh; /* Asegura que ocupe toda la pantalla */
+  width: 100;
+  /* background-color: #ef0000; */
+  min-height: 100vh; 
 }
 
 .coming-soon-section {
   padding: 20px;
-  background-color: #333; /* Fondo gris oscuro para visibilidad */
+  /* background-color: #333; */
   margin-top: 20px;
-  color: #fff; /* Texto blanco para contraste */
+  color: #fff; 
 }
 
 .coming-soon-section h2 {
+  display: flex;
+  justify-content: start  ;
   margin: 10px 0;
-  color: #fff; /* Texto blanco */
+  color: #fff; 
 }
 
 .coming-soon-list {
@@ -23,8 +26,7 @@
 }
 
 .coming-soon-item {
-  min-width: 150px;
-  max-width: 200px;
+
   background-color: #444; /* Fondo gris para los ítems */
   border-radius: 10px;
   overflow: hidden;

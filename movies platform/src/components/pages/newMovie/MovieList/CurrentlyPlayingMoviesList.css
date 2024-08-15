@@ -1,0 +1,67 @@
+/* .movie-container
+{
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: #db1717;
+  padding: 20px 0;
+
+
+} */
+
+.currently-playing-list {
+    display: flex;
+    align-items: end; /* Alineación vertical de los elementos */
+    gap: 20px;
+  
+    padding: 20px 0;
+    overflow-x: auto; /* Habilita el scroll horizontal */
+    background-color: #f0f0f0;
+    white-space: nowrap; /* Evita el wrap de los elementos */
+  }
+  
+  .currently-playing-item {
+    display: inline-block; /* Mantiene los elementos en línea */
+    flex: 0 0 auto;
+  
+    width: 150px; /* Ajuste de ancho para móviles */
+    margin-right: -90px;
+    transition: transform 0.3s;
+  }
+  
+  .currently-playing-item img {
+    width: 50%;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, z-index 0.3s;
+  }
+  
+  .currently-playing-item img:hover {
+    transform: scale(1.3); 
+    z-index: 1;
+  }
+  
+  .currently-playing-item .movie-title {
+    font-size: 1em; 
+    text-align: center;
+    margin-top: 10px;
+  }
+  
+  @media (min-width: 768px) {
+    
+    .currently-playing-item {
+      width: 200px; /* Aumenta el ancho en pantallas más grandes */
+    }
+    
+    .currently-playing-item img:hover {
+      transform: scale(1.5); /* Mayor escala en pantallas más grandes */
+    }
+  }
+  
+  @media (min-width: 1024px) {
+    /* Estilos para pantallas grandes */
+    .currently-playing-item {
+      width: 250px; /* Aumenta aún más el ancho en pantallas grandes */
+    }
+  }
+  
