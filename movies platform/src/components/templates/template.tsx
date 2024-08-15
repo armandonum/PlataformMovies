@@ -6,7 +6,7 @@ type Props= {
 
 const routes =[
     {
-        href: '/',
+        href: '/Home',
         text: 'Home',
     },
     {
@@ -26,12 +26,12 @@ const routes =[
 
 function Template({ children }: Props) {
     return (
-        <div>
-         
+        <div style={{ paddingTop: '15px' }}> {/* Ajusta según la altura del header */}
             <Header title="" links={routes} />
             {children}
         </div>
     );
 }
+
 
 export default Template;

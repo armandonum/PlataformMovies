@@ -1,33 +1,54 @@
-
-
-header {
- 
+.header-container {
+    position: fixed; /* Fijar el header en la parte superior */
+    top: 0;
+    left: 0;
     width: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Fondo negro semi-transparente */
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    border: 1px solid #000000;
-    /* background-color: aliceblue; */
+    border-bottom: 1px solid #000000;
+    z-index: 1000; /* Asegurarse de que el header esté por encima del contenido */
 }
 
+/* Estilo para el título del header */
+.header-container h1 {
+    color: white;
+    text-align: center;
+    margin: 0;
+    padding: 10px;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+/* Estilo para el menú horizontal */
 .horizontal-menu {
     display: flex;
     list-style: none;
     padding: 0;
     margin: 0;
-    justify-content: space-around;
+    justify-content: center; /* Centrando el contenido del menú */
 }
-/* 
-.horizontal-menu-item {
-    margin-right: 0px;
-} */
 
+/* Estilo para los ítems del menú */
+.horizontal-menu-item {
+    margin: 0 15px; /* Espacio entre los ítems */
+}
+
+/* Estilo para los enlaces del menú */
 .horizontal-menu-item a {
-    color: red;
+    color: white;
     font-size: large;
     text-decoration: none;
     font-family: 'Times New Roman', Times, serif;
 }
 
+/* Estilo para el fondo de las páginas */
+body {
+    margin: 0;
+    padding: 0;
+    background-color: black;
+    color: white;
+}
 
+/* Estilo responsivo para pantallas pequeñas */
 @media (max-width: 768px) {
     .horizontal-menu {
         flex-direction: column;
@@ -35,7 +56,6 @@ header {
     }
 
     .horizontal-menu-item {
-        margin-right: 0;
         margin-bottom: 10px;
     }
 }

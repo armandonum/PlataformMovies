@@ -8,7 +8,7 @@ type HeaderProps = {
 
 function Header({ title, links }: HeaderProps) {
     return (
-        <header>
+        <header className="header-container">
             <h1>{title}</h1>
             <nav>
                 <ul className="horizontal-menu">
