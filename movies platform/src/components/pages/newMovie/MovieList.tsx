@@ -1,6 +1,6 @@
 import  { useState } from 'react';
-import useMovie from '../hooks/useFetchMovies';
-import '../styles/MovieList.css';
+import useMovie from '../../../hooks/useFetchMovies';
+import './MovieList.css';
 
 function MovieList() {
   const { movies, loading, error } = useMovie();

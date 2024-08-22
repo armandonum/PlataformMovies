@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import useUpcomingMovies from '../../../../hooks/useUpcomingMovies';
+import useUpcomingMovies from '../../../hooks/useUpcomingMovies';
 import './UpcomingMoviesList.css';
 
 function UpcomingMoviesList() {

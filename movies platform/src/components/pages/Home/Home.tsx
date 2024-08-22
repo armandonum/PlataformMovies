@@ -1,60 +1,23 @@
-import React, { useEffect, useState, useRef } from 'react';
+import React from 'react';
+import useHomeMovies from '../../../hooks/useHomeMovies';
 import './Home.css';
 
-interface Movie {
-  id: number;
-  title: string;
-  poster_path: string;
-  release_date: string;
-  vote_average: number;
-  overview: string;
-}
-
 const Home = () => {
-  const [movies, setMovies] = useState<Movie[]>([]);
-  const [selectedMovie, setSelectedMovie] = useState<Movie | null>(null);
-  const carouselRef = useRef<HTMLDivElement>(null);
-  const [currentIndex, setCurrentIndex] = useState(0);
+  const {
+    movies,
+    selectedMovie,
+    loading,
+    error,
+    carouselRef,
+    currentIndex,
+    handleMovieClick,
+    handleCloseDetail,
+    handleNext,
+    handlePrev
+  } = useHomeMovies();
 
-  useEffect(() => {
-    const fetchMovies = async () => {
-      try {
-        const moviesUrl = 'https://api.themoviedb.org/3/trending/movie/week?api_key=1bdcbbadf977d6001b666f71148cb673';
-        const moviesResponse = await fetch(moviesUrl);
-        const moviesData = await moviesResponse.json();
-        // Limit to 10 movies
-        setMovies(moviesData.results.slice(0, 10));
-      } catch (err) {
-        console.error('Error loading movies', err);
-      }
-    };
-
-    fetchMovies();
-  }, []);
-
-  const handleMovieClick = (movie: Movie) => {
-    setSelectedMovie(movie);
-  };
-
-  const handleCloseDetail = () => {
-    setSelectedMovie(null);
-  };
-
-  const handleNext = () => {
-    if (carouselRef.current) {
-      const newIndex = (currentIndex + 1) % movies.length;
-      setCurrentIndex(newIndex);
-      carouselRef.current.style.transform = `translateX(-${newIndex * 100}%)`;
-    }
-  };
-
-  const handlePrev = () => {
-    if (carouselRef.current) {
-      const newIndex = (currentIndex - 1 + movies.length) % movies.length;
-      setCurrentIndex(newIndex);
-      carouselRef.current.style.transform = `translateX(-${newIndex * 100}%)`;
-    }
-  };
+  if (loading) return <p>Loading...</p>;
+  if (error) return <p>{error}</p>;
 
   return (
     <div className="home-container">

@@ -1,7 +1,7 @@
-import MovieList from '../../../context/MovieList';
-import './Movie.css'; 
-import UpcomingMoviesList from '../newMovie/MovieList/UpcomingMoviesList';
-import CurrentlyPlayingMoviesList from './MovieList/CurrentlyPlayingMoviesList';
+import MovieList from './MovieList';
+import './newMovie.css'; 
+import UpcomingMoviesList from './UpcomingMoviesList';
+import CurrentlyPlayingMoviesList from './CurrentlyPlayingMoviesList';
 export const Movie = () => {
   return (
     <div className="movie-list-container">
