@@ -14,29 +14,29 @@ interface Movie {
 }
 
 interface UseGenresAndMovies {
-  generes: Genre[];
+  genres: Genre[];
   movies: Movie[];
   loading: boolean;
   error: string | null;
-  fetchMoviesByGenere: (genreId: number) => Promise<void>;
-  selectGenere: (genre: Genre) => void;
+  fetchMoviesByGenre: (genreId: number) => Promise<void>;
+  selectGenre: (genre: Genre) => void;
   clearSelection: () => void;
-  selectedGenere: Genre | null;
+  selectedGenre: Genre | null;
 }
 
-const useGeneresAndMovies = (): UseGenresAndMovies => {
-  const [generes, setGeneres] = useState<Genre[]>([]);
+const useGenresAndMovies = (): UseGenresAndMovies => {
+  const [genres, setGenres] = useState<Genre[]>([]);
   const [movies, setMovies] = useState<Movie[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
-  const [selectedGenere, setSelectedGenere] = useState<Genre | null>(null);
+  const [selectedGenre, setSelectedGenre] = useState<Genre | null>(null);
 
   useEffect(() => {
-    const fetchGeneres = async () => {
+    const fetchGenres = async () => {
       try {
         const response = await fetch('https://api.themoviedb.org/3/genre/movie/list?api_key=1bdcbbadf977d6001b666f71148cb673');
         const data = await response.json();
-        setGeneres(data.genres);
+        setGenres(data.genres);
       } catch (err) {
         setError('Error loading genres');
       } finally {
@@ -44,11 +44,11 @@ const useGeneresAndMovies = (): UseGenresAndMovies => {
       }
     };
 
-    fetchGeneres();
+    fetchGenres();
   }, []);
 
-  const fetchMoviesByGenere = async (genreId: number) => {
-    setSelectedGenere(generes.find(genere => genere.id === genreId) || null);
+  const fetchMoviesByGenre = async (genreId: number) => {
+    setSelectedGenre(genres.find(genre => genre.id === genreId) || null);
     setLoading(true);
     try {
       const response = await fetch(`https://api.themoviedb.org/3/discover/movie?api_key=1bdcbbadf977d6001b666f71148cb673&with_genres=${genreId}`);
@@ -61,25 +61,25 @@ const useGeneresAndMovies = (): UseGenresAndMovies => {
     }
   };
 
-  const selectGenere = (genre: Genre) => {
-    fetchMoviesByGenere(genre.id);
+  const selectGenre = (genre: Genre) => {
+    fetchMoviesByGenre(genre.id);
   };
 
   const clearSelection = () => {
-    setSelectedGenere(null);
+    setSelectedGenre(null);
     setMovies([]);
   };
 
   return {
-    generes,
+    genres,
     movies,
     loading,
     error,
-    fetchMoviesByGenere,
-    selectGenere,
+    fetchMoviesByGenre,
+    selectGenre,
     clearSelection,
-    selectedGenere
+    selectedGenre
   };
 };
 
-export default useGeneresAndMovies;
+export default useGenresAndMovies;

@@ -8,7 +8,7 @@ import './index.css'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import{ Movie} from './components/pages/newMovie/NewMovie'
 import Template from './components/templates/template'
-import Genere from './components/pages/Genere/Genere.tsx'
+import Genere from './components/pages/Genre/Genre.tsx'
 import Home from './components/pages/Home/Home.tsx';
 
 

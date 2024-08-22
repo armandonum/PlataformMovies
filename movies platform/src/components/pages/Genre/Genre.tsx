@@ -1,41 +1,41 @@
 import React from 'react';
-import useGeneresAndMovies from '../../../hooks/useGeneresAndMovies';
-import './Genere.css';
+import useGenresAndMovies from '../../../hooks/useGenresAndMovies';
+import './Genre.css';
 
-const Genere = () => {
+const Genre = () => {
   const {
-    generes,
+    genres,
     movies,
     loading,
     error,
-    selectGenere,
+    selectGenre,
     clearSelection,
-    selectedGenere
-  } = useGeneresAndMovies();
+    selectedGenre
+  } = useGenresAndMovies();
 
   if (loading) return <p>Loading...</p>;
   if (error) return <p>{error}</p>;
 
   return (
-    <div className="genere-container">
-      {!selectedGenere ? (
+    <div className="genre-container">
+      {!selectedGenre ? (
         <>
-          <h1 className="genere-title">Movie Generes</h1>
-          <div className="genere-section">
-            <h2 className="genere-title">Generes</h2>
-            <ul className="genere-list">
-              {generes.map((genere) => (
-                <li key={genere.id} className="genere-item" onClick={() => selectGenere(genere)}>
-                  {genere.name}
+          <h1 className="genre-title">Movie Genres</h1>
+          <div className="genre-section">
+            <h2 className="genre-title">Genres</h2>
+            <ul className="genre-list">
+              {genres.map((genre) => (
+                <li key={genre.id} className="genre-item" onClick={() => selectGenre(genre)}>
+                  {genre.name}
                 </li>
               ))}
             </ul>
           </div>
         </>
       ) : (
-        <div className="genere-detail">
-          <button className="back-button" onClick={clearSelection}>Back to Generes</button>
-          <h2 className="genere-detail-title">{selectedGenere.name}</h2>
+        <div className="genre-detail">
+          <button className="back-button" onClick={clearSelection}>Back to Genres</button>
+          <h2 className="genre-detail-title">{selectedGenre.name}</h2>
           <div className="movie-list">
             {movies.map((movie) => (
               <div key={movie.id} className="movie-item">
@@ -57,4 +57,4 @@ const Genere = () => {
   );
 }
 
-export default Genere;
+export default Genre;

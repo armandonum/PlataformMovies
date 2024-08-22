@@ -1,4 +1,4 @@
-.genere-container {
+.genre-container {
   background-color: #000; /* Fondo negro */
   color: #fff; /* Texto blanco */
   padding: 10px;
@@ -7,26 +7,26 @@
   flex-direction: column;
 }
 
-.genere-title {
+.genre-title {
   font-size: 2em;
   margin-bottom: 20px;
   text-align: center;
 }
 
-/* Genere Section */
-.genere-section {
+/* Genre Section */
+.genre-section {
   margin-bottom: 40px;
 }
 
-/* Genere List */
-.genere-list {
+/* Genre List */
+.genre-list {
   display: flex;
   flex-wrap: wrap;
   gap: 20px;
   justify-content: center;
 }
 
-.genere-item {
+.genre-item {
   background-color: #911111;
   border-radius: 10px;
   overflow: hidden;
@@ -38,18 +38,18 @@
   cursor: pointer;
 }
 
-.genere-item:hover {
+.genre-item:hover {
   transform: scale(1.05);
 }
 
-.genere-item img {
+.genre-item img {
   width: 100%;
   height: auto;
   max-height: 100px;
   object-fit: cover;
 }
 
-.genere-item-title, .genere-item-overview {
+.genre-item-title, .genre-item-overview {
   position: absolute;
   bottom: 0;
   left: 0;
@@ -62,19 +62,19 @@
   text-align: center;
 }
 
-.genere-item:hover .genere-item-title, .genere-item:hover .genere-item-overview {
+.genre-item:hover .genre-item-title, .genre-item:hover .genre-item-overview {
   opacity: 1;
 }
 
-/* Genere Detail */
-.genere-detail {
+/* Genre Detail */
+.genre-detail {
   display: flex;
   flex-direction: column;
   align-items: center;
   padding: 20px;
 }
 
-.genere-detail-title {
+.genre-detail-title {
   font-size: 2em;
   margin-bottom: 20px;
   align-self: flex-start;
