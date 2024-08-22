@@ -1,15 +1,15 @@
 import React from 'react';
 import useHomeMovies from '../../../hooks/useHomeMovies';
+import MovieDetail from '../../templates/MovieDetail';
 import './Home.css';
 
-const Home = () => {
+const Home: React.FC = () => {
   const {
     movies,
     selectedMovie,
     loading,
     error,
     carouselRef,
-    currentIndex,
     handleMovieClick,
     handleCloseDetail,
     handleNext,
@@ -47,22 +47,7 @@ const Home = () => {
       </div>
 
       {selectedMovie && (
-        <div className="movie-detail-container active">
-          <button className="close-button" onClick={handleCloseDetail}>✕</button>
-          <div className="movie-detail-content">
-            <img
-              src={`https://image.tmdb.org/t/p/w500${selectedMovie.poster_path}`}
-              alt={selectedMovie.title}
-            />
-            <div className="movie-detail-info">
-              <h2>{selectedMovie.title}</h2>
-              <p><strong>Release Date:</strong> {selectedMovie.release_date}</p>
-              <p><strong>Rating:</strong> {selectedMovie.vote_average}</p>
-              <p><strong>Overview:</strong> {selectedMovie.overview}</p>
-              <button className="see-now-button">See Now</button>
-            </div>
-          </div>
-        </div>
+        <MovieDetail movie={selectedMovie} onClose={handleCloseDetail} />
       )}
     </div>
   );

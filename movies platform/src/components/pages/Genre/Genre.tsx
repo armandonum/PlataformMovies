@@ -1,8 +1,9 @@
 import React from 'react';
 import useGenresAndMovies from '../../../hooks/useGenresAndMovies';
+import GenreButtons from './GenreButtons';
 import './Genre.css';
 
-const Genre = () => {
+const Genre: React.FC = () => {
   const {
     genres,
     movies,
@@ -21,16 +22,8 @@ const Genre = () => {
       {!selectedGenre ? (
         <>
           <h1 className="genre-title">Movie Genres</h1>
-          <div className="genre-section">
-            <h2 className="genre-title">Genres</h2>
-            <ul className="genre-list">
-              {genres.map((genre) => (
-                <li key={genre.id} className="genre-item" onClick={() => selectGenre(genre)}>
-                  {genre.name}
-                </li>
-              ))}
-            </ul>
-          </div>
+          {/* Usando el componente GenreButtons */}
+          <GenreButtons genres={genres} onSelectGenre={selectGenre} />
         </>
       ) : (
         <div className="genre-detail">
