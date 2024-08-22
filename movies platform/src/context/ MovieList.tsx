@@ -1,19 +1,19 @@
-import  { useState } from 'react';
-import useMovie from '../hooks/useFetchMovies';
+import React, { useState } from 'react';
+import useMovie from '../hooks/useMovie';
 import '../styles/MovieList.css';
 
 function MovieList() {
   const { movies, loading, error } = useMovie();
-  const [backgroundImage, setBackgroundImage] = useState('');
+  const [backgroundImage, setBackgroundImage] = useState<string>('');
 
-  if (loading) return <p>Cargando...</p>;
+  if (loading) return <p>Loading...</p>;
   if (error) return <p>Error: {error}</p>;
 
   return (
     <div
       className="newmovie-list"
       style={{
-        backgroundImage: backgroundImage ? `url(https://image.tmdb.org/t/p/original${backgroundImage})` : ``,
+        backgroundImage: backgroundImage ? `url(https://image.tmdb.org/t/p/original${backgroundImage})` : '',
         backgroundSize: 'cover',
         backgroundPosition: 'center',
         transition: 'background-image 0.5s ease-in-out',

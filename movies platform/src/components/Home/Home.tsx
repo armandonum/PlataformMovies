@@ -19,11 +19,9 @@ const Home = () => {
   useEffect(() => {
     const fetchMovies = async () => {
       try {
-        const moviesUrl = 'https://api.themoviedb.org/3/trending/movie/week?api_key=1bdcbbadf977d6001b666f71148cb673';
-        const moviesResponse = await fetch(moviesUrl);
-        const moviesData = await moviesResponse.json();
-        // Limit to 10 movies
-        setMovies(moviesData.results.slice(0, 10));
+        const response = await fetch('https://api.themoviedb.org/3/trending/movie/week?api_key=1bdcbbadf977d6001b666f71148cb673');
+        const data = await response.json();
+        setMovies(data.results.slice(0, 10));
       } catch (err) {
         console.error('Error loading movies', err);
       }

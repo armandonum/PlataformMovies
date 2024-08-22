@@ -1,5 +1,4 @@
 import { useState, useEffect } from 'react';
-//import fetch from 'node-fetch';
 
 interface Movie {
   id: number;
@@ -11,16 +10,16 @@ interface Movie {
 function useMovie() {
   const [movies, setMovies] = useState<Movie[]>([]);
   const [loading, setLoading] = useState(true);
-  const [error] = useState<string | null>(null);
+  const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
     const fetchMovies = async () => {
       try {
-        const url = 'https://api.themoviedb.org/3/movie/popular?api_key=1bdcbbadf977d6001b666f71148cb673';
-        const response = await fetch(url);
+        const response = await fetch('https://api.themoviedb.org/3/movie/popular?api_key=1bdcbbadf977d6001b666f71148cb673');
         const data = await response.json();
         setMovies(data.results);
-
+      } catch (err) {
+        setError('Error fetching movies');
       } finally {
         setLoading(false);
       }
