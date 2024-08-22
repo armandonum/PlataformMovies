@@ -2,7 +2,7 @@
 
 .upcomingmovie-list {
   display: flex;
-  align-items: end; /* Alineación vertical de los elementos */
+  align-items: end; 
  
 
   padding: 20px 0;

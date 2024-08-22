@@ -1,17 +1,25 @@
 import { useState, useEffect } from 'react';
+import { fetchFromApi } from '../api/api'; // Adjust the path as necessary
+
+interface Movie {
+  id: number;
+  title: string;
+  poster_path: string;
+  overview: string;
+}
 
 function useUpcomingMovies() {
-  const [movies, setMovies] = useState([]);
+  const [movies, setMovies] = useState<Movie[]>([]);
   const [loading, setLoading] = useState(true);
-  const [error] = useState(null);
+  const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
     const fetchMovies = async () => {
       try {
-        const response = await fetch(`https://api.themoviedb.org/3/movie/upcoming?api_key=1bdcbbadf977d6001b666f71148cb673`);
-        const data = await response.json();
+        const data = await fetchFromApi('/movie/upcoming?');
         setMovies(data.results);
-      
+      } catch (err) {
+        setError((error as any).message);
       } finally {
         setLoading(false);
       }

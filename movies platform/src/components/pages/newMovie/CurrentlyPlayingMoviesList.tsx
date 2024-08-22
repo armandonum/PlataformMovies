@@ -1,6 +1,6 @@
 
 import { useState } from 'react';
-import useCurrentlyPlayingMovies from '../../../../hooks/useFetchCurrentlyPlayingMovies';
+import useCurrentlyPlayingMovies from '../../../hooks/useFetchCurrentlyPlayingMovies';
 import './CurrentlyPlayingMoviesList.css';
 
 function CurrentlyPlayingMoviesList() {
