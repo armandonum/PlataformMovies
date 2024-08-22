@@ -10,7 +10,7 @@ import{ Movie} from './components/pages/newMovie/NewMovie'
 import Template from './components/templates/template'
 import Genere from './components/pages/Genre/Genre.tsx'
 import Home from './components/pages/Home/Home.tsx';
-
+import TVSeries from './components/pages/TVSeries/TVSeries';
 
 
 const routes =createBrowserRouter([
@@ -30,6 +30,10 @@ const routes =createBrowserRouter([
     path: '/Genere',
     element: <Template><Genere /></Template>
   },
+  {
+    path: '/TVSeries',
+    element: <Template><TVSeries /></Template>
+  }
  
 ]
 );

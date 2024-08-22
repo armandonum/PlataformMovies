@@ -36,7 +36,7 @@ const useHomeMovies = (): UseMovies => {
         const moviesUrl = 'https://api.themoviedb.org/3/trending/movie/week?api_key=1bdcbbadf977d6001b666f71148cb673';
         const moviesResponse = await fetch(moviesUrl);
         const moviesData = await moviesResponse.json();
-        setMovies(moviesData.results.slice(0, 10));
+        setMovies(moviesData.results.slice(0, 15));
       } catch (err) {
         setError('Error loading movies');
       } finally {
