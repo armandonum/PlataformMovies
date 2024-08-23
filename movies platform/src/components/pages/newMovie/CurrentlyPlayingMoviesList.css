@@ -11,20 +11,20 @@
 
 .currently-playing-list {
     display: flex;
-    align-items: end; /* Alineación vertical de los elementos */
+    align-items: end;
     gap: 20px;
   
     padding: 20px 0;
-    overflow-x: auto; /* Habilita el scroll horizontal */
-    background-color: #f0f0f0;
-    white-space: nowrap; /* Evita el wrap de los elementos */
+    overflow-x: auto; 
+    background-color: black;
+    white-space: nowrap; 
   }
   
   .currently-playing-item {
-    display: inline-block; /* Mantiene los elementos en línea */
+    display: inline-block;
     flex: 0 0 auto;
   
-    width: 150px; /* Ajuste de ancho para móviles */
+    width: 150px; 
     margin-right: -90px;
     transition: transform 0.3s;
   }
@@ -54,14 +54,14 @@
     }
     
     .currently-playing-item img:hover {
-      transform: scale(1.5); /* Mayor escala en pantallas más grandes */
+      transform: scale(1.5); 
     }
   }
   
   @media (min-width: 1024px) {
     /* Estilos para pantallas grandes */
     .currently-playing-item {
-      width: 250px; /* Aumenta aún más el ancho en pantallas grandes */
+      width: 250px; 
     }
   }
   
