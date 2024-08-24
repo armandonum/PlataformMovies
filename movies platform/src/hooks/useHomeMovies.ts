@@ -1,4 +1,6 @@
 import { useState, useEffect, useRef } from 'react';
+import { fetchFromApi } from '../api/api'; 
+
 
 interface Movie {
   id: number;
@@ -33,7 +35,8 @@ const useHomeMovies = (): UseMovies => {
   useEffect(() => {
     const fetchMovies = async () => {
       try {
-        const moviesUrl = 'https://api.themoviedb.org/3/trending/movie/week?api_key=1bdcbbadf977d6001b666f71148cb673';
+        //const moviesUrl = 'https://api.themoviedb.org/3/trending/movie/week?api_key=1bdcbbadf977d6001b666f71148cb673';
+        const moviesUrl = await fetchFromApi('/trending/movie/week?');
         const moviesResponse = await fetch(moviesUrl);
         const moviesData = await moviesResponse.json();
         setMovies(moviesData.results.slice(0, 10));
