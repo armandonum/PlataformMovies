@@ -29,7 +29,7 @@
 .genre-list {
   display: flex;
   flex-wrap: wrap;
-  /* background-color: red; */
+ 
 
    gap: 20px;
 justify-content:center;
