@@ -22,8 +22,8 @@ const Genre: React.FC = () => {
       {!selectedGenre ? (
         <>
           <h1 className="genre-title">Movie Genres</h1>
-          {/* Usando el componente GenreButtons */}
-          <GenreButtons genres={genres} onSelectGenre={selectGenre} />
+        {
+          <GenreButtons genres={genres} onSelectGenre={selectGenre} />}
         </>
       ) : (
         <div className="genre-detail">

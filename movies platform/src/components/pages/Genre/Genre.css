@@ -15,18 +15,29 @@
 
 /* Genre Section */
 .genre-section {
-  margin-bottom: 40px;
+
+  /* margin-bottom: 40px; */
+  display: flex;
+  flex-wrap: wrap;
+
+  flex-direction:column;
+  justify-content: center;
+
 }
 
 /* Genre List */
 .genre-list {
   display: flex;
   flex-wrap: wrap;
-  gap: 20px;
-  justify-content: center;
+  /* background-color: red; */
+
+   gap: 20px;
+justify-content:center;
 }
 
+
 .genre-item {
+  
   background-color: #911111;
   border-radius: 10px;
   overflow: hidden;
@@ -124,4 +135,16 @@
 
 .movie-item:hover {
   transform: scale(1.05);
+}
+
+/* Media Query for Mobile Devices */
+@media (max-width: 600px) {
+  .back-button {
+    align-self: center;
+  }
+
+  .genre-detail-title {
+    text-align: center;
+    align-self: center;
+  }
 }

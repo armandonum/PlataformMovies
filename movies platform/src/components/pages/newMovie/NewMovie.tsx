@@ -8,22 +8,17 @@ export const Movie = () => {
       <MovieList />
 
       <div className="coming-soon-section">
-        <h2>urrently playing</h2>
+        <h2>Currently playing</h2>
         <div className="coming-soon-list">
-          {/* Aquí puedes agregar una lista de películas que están por venir */}
-          <div className="coming-soon-item">
-            
-          <CurrentlyPlayingMoviesList />
-          </div>
+        <CurrentlyPlayingMoviesList />
+  
         </div>
       </div>
       <div className="coming-soon-section">
         <h2>Coming Soon</h2>
         <div className="coming-soon-list">
-          {/* Aquí puedes agregar una lista de películas que están por venir */}
-          <div className="coming-soon-item">
-          <UpcomingMoviesList />
-          </div>
+        <UpcomingMoviesList />
+   
         </div>
       </div>
     </div>

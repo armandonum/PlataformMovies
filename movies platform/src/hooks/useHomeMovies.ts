@@ -37,9 +37,8 @@ const useHomeMovies = (): UseMovies => {
       try {
         //const moviesUrl = 'https://api.themoviedb.org/3/trending/movie/week?api_key=1bdcbbadf977d6001b666f71148cb673';
         const moviesUrl = await fetchFromApi('/trending/movie/week?');
-        const moviesResponse = await fetch(moviesUrl);
-        const moviesData = await moviesResponse.json();
-        setMovies(moviesData.results.slice(0, 10));
+        setMovies(moviesUrl.results);
+       setMovies(moviesUrl.results.slice(0, 20));
       } catch (err) {
         setError('Error loading movies');
       } finally {
@@ -49,6 +48,7 @@ const useHomeMovies = (): UseMovies => {
 
     fetchMovies();
   }, []);
+
 
   const handleMovieClick = (movie: Movie) => {
     setSelectedMovie(movie);

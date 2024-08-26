@@ -29,7 +29,12 @@ function Template({ children }: Props) {
         <div style={{ paddingTop: '15px' }}> {/* Ajusta según la altura del header */}
             <Header title="" links={routes} />
             {children}
+        <div>
+dghjkl
         </div>
+        </div>
+      
+
     );
 }
 

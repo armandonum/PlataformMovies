@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { fetchFromApi } from '../api/api';
 
 interface Genre {
   id: number;
@@ -34,9 +35,10 @@ const useGenresAndMovies = (): UseGenresAndMovies => {
   useEffect(() => {
     const fetchGenres = async () => {
       try {
-        const response = await fetch('https://api.themoviedb.org/3/genre/movie/list?api_key=1bdcbbadf977d6001b666f71148cb673');
-        const data = await response.json();
-        setGenres(data.genres);
+        //const  response= await fetch('https://api.themoviedb.org/3/genre/movie/list?api_key=1bdcbbadf977d6001b666f71148cb673');
+        const response = await fetchFromApi('/genre/movie/list?');
+
+        setGenres(response.genres);
       } catch (err) {
         setError('Error loading genres');
       } finally {
@@ -51,9 +53,10 @@ const useGenresAndMovies = (): UseGenresAndMovies => {
     setSelectedGenre(genres.find(genre => genre.id === genreId) || null);
     setLoading(true);
     try {
-      const response = await fetch(`https://api.themoviedb.org/3/discover/movie?api_key=1bdcbbadf977d6001b666f71148cb673&with_genres=${genreId}`);
-      const data = await response.json();
-      setMovies(data.results);
+     // const response = await fetch(`https://api.themoviedb.org/3/discover/movie?api_key=1bdcbbadf977d6001b666f71148cb673&with_genres=${genreId}`);
+      const response = await fetchFromApi(`/discover/movie?with_genres=${genreId}`);
+     
+      setMovies(response.results);
     } catch (err) {
       setError('Error loading movies');
     } finally {
