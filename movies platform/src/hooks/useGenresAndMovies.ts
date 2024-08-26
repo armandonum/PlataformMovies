@@ -17,10 +17,14 @@ interface Movie {
 interface UseGenresAndMovies {
   genres: Genre[];
   movies: Movie[];
+  selectedMovie: Movie | null;
   loading: boolean;
   error: string | null;
   fetchMoviesByGenre: (genreId: number) => Promise<void>;
   selectGenre: (genre: Genre) => void;
+  handleMovieClick: (movie: Movie) => void;
+  handleCloseDetail: () => void;
+
   clearSelection: () => void;
   selectedGenre: Genre | null;
 }
@@ -31,6 +35,7 @@ const useGenresAndMovies = (): UseGenresAndMovies => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
   const [selectedGenre, setSelectedGenre] = useState<Genre | null>(null);
+  const [selectedMovie, setSelectedMovie] = useState<Movie | null>(null);
 
   useEffect(() => {
     const fetchGenres = async () => {
@@ -68,18 +73,30 @@ const useGenresAndMovies = (): UseGenresAndMovies => {
     fetchMoviesByGenre(genre.id);
   };
 
+
   const clearSelection = () => {
     setSelectedGenre(null);
     setMovies([]);
   };
+  const handleMovieClick = (movie: Movie) => {
+    setSelectedMovie(movie);
+  };
+  const handleCloseDetail = () => {
+    setSelectedMovie(null);
+  };
+
 
   return {
     genres,
     movies,
+    selectedMovie,
     loading,
     error,
     fetchMoviesByGenre,
+   
     selectGenre,
+    handleMovieClick,
+    handleCloseDetail,
     clearSelection,
     selectedGenre
   };
