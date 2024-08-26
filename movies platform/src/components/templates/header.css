@@ -6,7 +6,7 @@
     background: rgba(0, 0, 0, 0.5); /* Fondo negro semi-transparente */
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     border-bottom: 1px solid #000000;
-    z-index: 1000; /* Asegurarse de que el header esté por encima del contenido */
+    /* z-index: 1000;  */
 }
 
 /* Estilo para el título del header */

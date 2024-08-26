@@ -4,7 +4,7 @@
   display: flex;
   align-items: end; 
  
-
+gap: 20px;
   padding: 20px 0;
   overflow-x: auto; 
   background-color: black;

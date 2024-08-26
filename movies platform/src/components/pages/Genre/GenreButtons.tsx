@@ -15,17 +15,20 @@ const GenreButtons: React.FC<GenreButtonsProps> = ({ genres, onSelectGenre }) =>
   return (
     <div className="genre-section">
       <h2 className="genre-title">Genres</h2>
-      <ul className="genre-list">
+   
+      <div className="genre-list">
         {genres.map((genre) => (
-          <li
+          <button
             key={genre.id}
             className="genre-item"
             onClick={() => onSelectGenre(genre)}
           >
             {genre.name}
-          </li>
+          </button>
         ))}
-      </ul>
+      </div>
+      
+      
     </div>
   );
 };
