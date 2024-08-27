@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { fetchFromApi } from '../api/api'; // Adjust the path as necessary
+import { fetchFromApi } from '../api/api';
 
 interface Movie {
   id: number;

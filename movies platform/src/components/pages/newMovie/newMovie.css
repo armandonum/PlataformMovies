@@ -25,18 +25,7 @@
   gap: 10px; /* Espacio entre películas */
 }
 
-.coming-soon-item {
 
-  background-color: #444; /* Fondo gris para los ítems */
-  border-radius: 10px;
-  overflow: hidden;
-}
-
-.coming-soon-item img {
-  width: 100%;
-  height: auto;
-  object-fit: cover;
-}
 
 @media (max-width: 768px) {
   .movie-list-container, .coming-soon-section {

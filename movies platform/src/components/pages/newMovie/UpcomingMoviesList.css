@@ -4,10 +4,10 @@
   display: flex;
   align-items: end; 
  
-
+gap: 20px;
   padding: 20px 0;
   overflow-x: auto; 
-  background-color: #f0f0f0;
+  background-color: black;
   white-space: nowrap; 
 }
 
@@ -45,13 +45,13 @@
   }
   
   .upcomingmovie-item img:hover {
-    transform: scale(1.5); /* Mayor escala en pantallas más grandes */
+    transform: scale(1.5); 
   }
 }
 
 @media (min-width: 1024px) {
   /* Estilos para pantallas grandes */
   .upcomingmovie-item {
-    width: 250px; /* Aumenta aún más el ancho en pantallas grandes */
+    width: 250px; 
   }
 }
