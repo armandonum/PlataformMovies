@@ -1,34 +1,11 @@
 import { useState, useEffect } from 'react';
 import { fetchFromApi } from '../api/api';
+import { Movie, Genre,UseGenresAndMovies} from '../types/types';
 
-interface Genre {
-  id: number;
-  name: string;
-}
 
-interface Movie {
-  id: number;
-  title: string;
-  poster_path: string;
-  release_date: string;
-  vote_average: number;
-  overview: string;
-}
 
-interface UseGenresAndMovies {
-  genres: Genre[];
-  movies: Movie[];
-  selectedMovie: Movie | null;
-  loading: boolean;
-  error: string | null;
-  fetchMoviesByGenre: (genreId: number) => Promise<void>;
-  selectGenre: (genre: Genre) => void;
-  handleMovieClick: (movie: Movie) => void;
-  handleCloseDetail: () => void;
 
-  clearSelection: () => void;
-  selectedGenre: Genre | null;
-}
+
 
 const useGenresAndMovies = (): UseGenresAndMovies => {
   const [genres, setGenres] = useState<Genre[]>([]);

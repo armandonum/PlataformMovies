@@ -1,59 +1,36 @@
 .actor-list-container {
-    padding: 20px 0;
-    background-color: black; /* Contraste adecuado */
-    color: white; /* Texto legible */
-    overflow-x: auto; /* Permite el scroll horizontal */
-    overflow-y: hidden; /* Evita el scroll vertical */
-    white-space: nowrap; /* Evita que los elementos se envuelvan */
-    -webkit-overflow-scrolling: touch; /* Mejora el desplazamiento en dispositivos táctiles */
-  }
-  
-  .actor-list {
-    display: flex;
-    gap: 20px; /* Espaciado entre actores */
-    align-items: center; /* Alinea verticalmente */
-    padding: 0 10px; /* Espaciado interno */
-  }
-  
-  .actor-item {
-    display: inline-block;
-    text-align: center;
-    flex: 0 0 auto; /* No se estira ni se contrae */
-  }
-  
-  .actor-image {
-    width: 120px; /* Tamaño de la imagen */
-    height: 180px; /* Altura proporcional */
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    object-fit: cover; /* Mantiene las proporciones de la imagen */
-  }
-  
-  .actor-item p {
-    margin-top: 5px;
-    font-size: 14px; /* Tamaño del texto */
-  }
-  
-  /* Aumentar el tamaño de imagen y texto en pantallas más grandes */
-  @media (min-width: 768px) {
-    .actor-image {
-      width: 150px;
-      height: 225px;
-    }
-  
-    .actor-item p {
-      font-size: 16px;
-    }
-  }
-  
-  @media (min-width: 1024px) {
-    .actor-image {
-      width: 180px;
-      height: 270px;
-    }
-  
-    .actor-item p {
-      font-size: 18px;
-    }
-  }
-  
+  padding: 20px 0;
+  background-color: black;
+  color: white;
+  overflow-x: auto; 
+  white-space: nowrap; 
+  -webkit-overflow-scrolling: touch;
+}
+
+.actor-list {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  padding: 0 10px; 
+}
+
+.actor-item {
+  display: inline-block;
+  text-align: center;
+  flex: 0 0 auto; 
+}
+
+.actor-image {
+  width: 120px;
+  height: 180px; 
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  object-fit: cover; 
+}
+
+.actor-item p {
+  margin-top: 5px;
+  font-size: 14px; 
+}
+
+

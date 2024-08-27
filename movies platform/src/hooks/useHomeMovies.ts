@@ -1,28 +1,11 @@
 import { useState, useEffect, useRef } from 'react';
 import { fetchFromApi } from '../api/api'; 
+import { Movie,UseMovies } from '../types/types';
 
 
-interface Movie {
-  id: number;
-  title: string;
-  poster_path: string;
-  release_date: string;
-  vote_average: number;
-  overview: string;
-}
 
-interface UseMovies {
-  movies: Movie[];
-  selectedMovie: Movie | null;
-  loading: boolean;
-  error: string | null;
-  carouselRef: React.RefObject<HTMLDivElement>;
-  currentIndex: number;
-  handleMovieClick: (movie: Movie) => void;
-  handleCloseDetail: () => void;
-  handleNext: () => void;
-  handlePrev: () => void;
-}
+
+
 
 const useHomeMovies = (): UseMovies => {
   const [movies, setMovies] = useState<Movie[]>([]);

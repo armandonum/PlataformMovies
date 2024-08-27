@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from 'react';
-import { fetchFromApi } from '../../api/api';
+import React from 'react';
+import useActors from '../../hooks/useActors';
 import ActorList from './ActorList';
 import './SeeNow.css';
 
@@ -8,54 +8,34 @@ interface SeeNowProps {
   onClose: () => void;
 }
 
-interface Actor {
-  id: number;
-  name: string;
-  profile_path: string;
-}
-
 const SeeNow: React.FC<SeeNowProps> = ({ movieId, onClose }) => {
-  const [trailer, setTrailer] = useState<string | null>(null);
-  const [actors, setActors] = useState<Actor[]>([]);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState<string | null>(null);
-
-  useEffect(() => {
-    const fetchDetails = async () => {
-      try {
-        const trailerData = await fetchFromApi(`/movie/${movieId}/videos?`);
-        const actorsData = await fetchFromApi(`/movie/${movieId}/credits?`);
-        const trailerVideo = trailerData.results.find((video: any) => video.type === 'Trailer');
-        setTrailer(trailerVideo ? `https://www.youtube.com/watch?v=${trailerVideo.key}` : null);
-        setActors(actorsData.cast || []); // Manejar caso donde cast puede ser undefined
-      } catch (err) {
-        setError('Error loading movie details. Please try again later.');
-      } finally {
-        setLoading(false);
-      }
-    };
-
-    fetchDetails();
-  }, [movieId]);
-
-  if (loading) return <p>Loading...</p>;
-  if (error) return <p>Error: {error}</p>;
+  const { actors, loading: actorsLoading, error: actorsError } = useActors(movieId);
 
   return (
-    <div className="see-now-container">
-      <button className="close-button" onClick={onClose}>✕</button>
-      <div className="see-now-content">
-        {trailer ? (
-          <div className="trailer-container">
-            <h2>Trailer</h2>
-            <p>
-              <a href={trailer} target="_blank" rel="noopener noreferrer">Watch Trailer on YouTube</a>
-            </p>
-          </div>
-        ) : (
-          <p>No trailer available</p>
-        )}
-        <div className="actors-container">
+    <div className="see-now-wrapper">
+      <button className="close-button" onClick={onClose}>
+        x
+      </button>
+      <div className='trailer_container'>
+        <h2>See Trailer</h2>
+        <div className="trailer-content">
+          <iframe
+            width="560"
+            height="315"
+            src="https://www.youtube.com/embed/AZbEi95SuMg"
+          ></iframe>
+        </div>
+
+      </div >
+
+      <div className='seeMovie'>
+        <button>HBO</button>
+        <button> netflix    </button>
+      </div>
+
+      <div className='acrtors-container'>
+        <h2>Actors</h2>
+        <div className='actors-content'>
           <ActorList actors={actors} />
         </div>
       </div>
