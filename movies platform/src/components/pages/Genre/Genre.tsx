@@ -1,15 +1,19 @@
 import React from 'react';
 import useGenresAndMovies from '../../../hooks/useGenresAndMovies';
 import GenreButtons from './GenreButtons';
+import MovieDetail from '../../templates/MovieDetail';
 import './Genre.css';
 
 const Genre: React.FC = () => {
   const {
     genres,
     movies,
+    selectedMovie,
     loading,
     error,
     selectGenre,
+    handleMovieClick,
+    handleCloseDetail,
     clearSelection,
     selectedGenre
   } = useGenresAndMovies();
@@ -22,16 +26,17 @@ const Genre: React.FC = () => {
       {!selectedGenre ? (
         <>
           <h1 className="genre-title">Movie Genres</h1>
-        {
-          <GenreButtons genres={genres} onSelectGenre={selectGenre} />}
+          {
+            <GenreButtons genres={genres} onSelectGenre={selectGenre} />}
         </>
       ) : (
         <div className="genre-detail">
           <button className="back-button" onClick={clearSelection}>Back to Genres</button>
           <h2 className="genre-detail-title">{selectedGenre.name}</h2>
           <div className="movie-list">
-            {movies.map((movie) => (
-              <div key={movie.id} className="movie-item">
+
+            {movies.map((movie, index) => (
+              <div key={index} className="movie-item" onClick={() => handleMovieClick(movie)}>
                 <img
                   src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
                   alt={movie.title}
@@ -43,9 +48,18 @@ const Genre: React.FC = () => {
                 </div>
               </div>
             ))}
+
           </div>
+
         </div>
+
+
       )}
+   {selectedMovie && (
+  <MovieDetail movie={selectedMovie} onClose={handleCloseDetail} />
+)}
+
+
     </div>
   );
 }

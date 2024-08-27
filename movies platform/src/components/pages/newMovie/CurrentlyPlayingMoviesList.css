@@ -1,13 +1,4 @@
-/* .movie-container
-{
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-  background-color: #db1717;
-  padding: 20px 0;
 
-
-} */
 
 .currently-playing-list {
     display: flex;
