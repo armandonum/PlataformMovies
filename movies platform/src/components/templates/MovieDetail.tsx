@@ -13,9 +13,10 @@ interface Movie {
 interface MovieDetailProps {
   movie: Movie;
   onClose: () => void;
+  onSeeNow: () => void;
 }
 
-const MovieDetail: React.FC<MovieDetailProps> = ({ movie, onClose }) => {
+const MovieDetail: React.FC<MovieDetailProps> = ({ movie, onClose,onSeeNow }) => {
   return (
     <div className="movie-detail-container active">
       <button className="close-button" onClick={onClose}>✕</button>
@@ -29,7 +30,7 @@ const MovieDetail: React.FC<MovieDetailProps> = ({ movie, onClose }) => {
           <p><strong>Release Date:</strong> {movie.release_date}</p>
           <p><strong>Rating:</strong> {movie.vote_average}</p>
           <p><strong>Overview:</strong> {movie.overview}</p>
-          <button className="see-now-button">See Now</button>
+          <button className="see-now-button"onClick={onSeeNow}>See Now</button>
         </div>
       </div>
     </div>
