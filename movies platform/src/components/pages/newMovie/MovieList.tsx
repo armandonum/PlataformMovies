@@ -1,10 +1,19 @@
-import  { useState } from 'react';
+import React from 'react';
 import useMovie from '../../../hooks/useFetchMovies';
+import MovieDetail from '../../templates/MovieDetail';
 import './MovieList.css';
 
 function MovieList() {
-  const { movies, loading, error } = useMovie();
-  const [backgroundImage, setBackgroundImage] = useState('');
+  const { 
+    movies, 
+    loading, 
+    error, 
+    backgroundImage, 
+    selectedMovie, 
+    handleMouseEnter, 
+    handleMovieClick, 
+    handleCloseDetail 
+  } = useMovie();
 
   if (loading) return <p>Cargando...</p>;
   if (error) return <p>Error: {error}</p>;
@@ -23,11 +32,16 @@ function MovieList() {
         <div
           className="newmovie-item"
           key={movie.id}
-          onMouseEnter={() => setBackgroundImage(movie.poster_path)}
+          onMouseEnter={() => handleMouseEnter(movie)}
+          onClick={() => handleMovieClick(movie)}
         >
           <img src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} alt={movie.title} />
         </div>
       ))}
+
+      {selectedMovie && (
+        <MovieDetail movie={selectedMovie} onClose={handleCloseDetail} />
+      )}
     </div>
   );
 }
