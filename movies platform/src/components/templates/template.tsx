@@ -14,8 +14,8 @@ const routes =[
         text: 'NewMovie',
     },
     {
-        href: '/Genere',
-        text: 'Genere',
+        href: '/Genre',
+        text: 'Genre',
     },
     {
         href: '/TVSeries',
