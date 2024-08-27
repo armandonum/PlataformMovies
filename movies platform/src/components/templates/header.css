@@ -1,67 +1,70 @@
 .header-container {
-    position: fixed; /* Fijar el header en la parte superior */
-    top: 0;
-    left: 0;
-    width: 100%;
-    background: rgba(0, 0, 0, 0.5); /* Fondo negro semi-transparente */
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    border-bottom: 1px solid #000000;
-    /* z-index: 1000;  */
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: #000;
+  color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  z-index: 1000; 
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 /* Estilo para el título del header */
 .header-container h1 {
-    color: white;
-    text-align: center;
-    margin: 0;
-    padding: 10px;
-    font-family: 'Times New Roman', Times, serif;
+  color: white;
+  text-align: center;
+  margin: 0;
+  padding: 10px;
+  font-size: 1.5em;
+  font-family: 'Times New Roman', Times, serif;
 }
 
 /* Estilo para el menú horizontal */
 .horizontal-menu {
-    display: flex;
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    justify-content: center; /* Centrando el contenido del menú */
+  display: flex;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  justify-content: center; /* Centrando el contenido del menú */
 }
 
 /* Estilo para los ítems del menú */
 .horizontal-menu-item {
-    margin: 0 15px; /* Espacio entre los ítems */
+  margin: 0 15px; /* Espacio entre los ítems */
 }
 
 /* Estilo para los enlaces del menú */
 .horizontal-menu-item a {
-    color: white;
-    font-size: large;
-    text-decoration: none;
-    font-family: 'Times New Roman', Times, serif;
+  color: white;
+  font-size: large;
+  text-decoration: none;
+  font-family: 'Times New Roman', Times, serif;
 }
 
 /* Estilo para el fondo de las páginas */
 body {
-    margin: 0;
-    padding: 0;
-    background-color: black;
-    color: white;
+  margin: 0;
+  padding: 0;
+  background-color: black;
+  color: white;
 }
 
 /* Estilo responsivo para pantallas pequeñas */
 @media (max-width: 768px) {
-    .horizontal-menu {
-        flex-direction: column;
-        align-items: center;
-    }
+  .horizontal-menu {
+      flex-direction: column;
+      align-items: center;
+  }
 
-    .horizontal-menu-item {
-        margin-bottom: 10px;
-    }
+  .horizontal-menu-item {
+      margin-bottom: 10px;
+  }
 }
 
 @media (max-width: 480px) {
-    .horizontal-menu-item a {
-        font-size: medium;
-    }
+  .horizontal-menu-item a {
+      font-size: medium;
+  }
 }
