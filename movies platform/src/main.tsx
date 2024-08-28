@@ -8,12 +8,13 @@ import Genre from './components/pages/Genre/Genre.tsx'
 import Home from './components/pages/Home/Home.tsx';
 import TVSeries from './components/pages/TVSeries/TVSeries.tsx'
 import Search from './components/templates/Search/Search.tsx'
+import App from './App.tsx'
 
 
 const routes =createBrowserRouter([
   {
     path: '/',
-    element: <Template><Home /></Template>
+    element: <Template><App /></Template>
   },
   {
     path: '/Home',
