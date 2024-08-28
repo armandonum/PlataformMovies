@@ -10,7 +10,7 @@ interface Movie {
   overview: string;
 }
 
-function useMovie() {
+function useMovie(_query: string) {
   const [movies, setMovies] = useState<Movie[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);

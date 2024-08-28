@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import useFetchTVSeries from '../../../hooks/useFetchTVSeries';
 import MovieDetail from '../../templates/MovieDetail';
 import './TVSeries.css';
