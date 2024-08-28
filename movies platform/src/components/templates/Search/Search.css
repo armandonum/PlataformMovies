@@ -2,10 +2,10 @@
 .search-container {
     position: relative;
     width: 100%;
-    background-color: black; /* Asegúrate de que el fondo sea negro */
+    background-color: black; 
   }
   
-  /* Estilo del cuadro de búsqueda */
+
   .search-box {
     display: flex;
     justify-content: center;
@@ -32,11 +32,11 @@
     gap: 20px;
   }
   
-  /* Estilo de cada tarjeta de resultado */
+  
   .result-card {
-    width: 250px; /* Ajusta el tamaño de las tarjetas */
-    height: 500px; /* Ajusta la altura de las tarjetas */
-    background: #333; /* Fondo de las tarjetas */
+    width: 250px; 
+    height: 500px; 
+    background: #333; 
     border-radius: 10px;
     overflow: hidden;
     text-align: center;

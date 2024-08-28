@@ -1,11 +1,19 @@
-import React from 'react';
+import React, {useState} from 'react';
 import useFetchTVSeries from '../../../hooks/useFetchTVSeries';
 import MovieDetail from '../../templates/MovieDetail';
+import SeeNow from '../../templates/SeeNow';
 import './TVSeries.css';
 
 const TVSeries: React.FC = () => {
   const { series, loading, error, selectedMovie, handleMovieClick, handleCloseDetail } = useFetchTVSeries();
+  const [showSeeNow, setShowSeeNow] = useState(false);
 
+  const handleSeeNowClick = () => {
+    setShowSeeNow(true);
+  };
+  const handleCloseSeeNow = () => {
+    setShowSeeNow(false);
+  };
   if (loading) return <p>Loading...</p>;
   if (error) return <p>{error}</p>;
 
@@ -27,9 +35,21 @@ const TVSeries: React.FC = () => {
                 <div className="tvseries-item-title">{seriesItem.name}</div>
               </div>
             ))}
-                 {selectedMovie && (
-        <MovieDetail movie={selectedMovie} onClose={handleCloseDetail} />
-                 )}
+        {selectedMovie && (
+        <>
+          <MovieDetail
+            movie={selectedMovie}
+            onClose={handleCloseDetail}
+            onSeeNow={handleSeeNowClick}
+          />
+          {showSeeNow && (
+            <SeeNow
+              movieId={selectedMovie.id}
+              onClose={handleCloseSeeNow}
+            />
+          )}
+        </>
+      )}
           </div>
       
     </div>

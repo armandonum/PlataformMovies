@@ -11,7 +11,7 @@ const useTrailer = (movieId: number) => {
       try {
         const trailerData = await fetchFromApi(`/movie/${movieId}/videos?`);
         const trailerVideo = trailerData.results.find((video: any) => video.type === 'Trailer');
-        setTrailer(trailerVideo ? `https://www.youtube.com/watch?v=${trailerVideo.key}` : null);
+        setTrailer(trailerVideo ? `https://www.youtube.com/embed/${trailerVideo.key}` : null);
       } catch (err) {
         setError('Error loading trailer. Please try again later.');
       } finally {

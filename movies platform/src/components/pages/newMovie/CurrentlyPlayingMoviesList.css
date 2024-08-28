@@ -5,10 +5,8 @@
     align-items: end;
     gap: 20px;
   
-    padding: 20px 0;
-    overflow-x: auto; 
-    background-color: black;
-    white-space: nowrap; 
+    padding: 20px;
+
   }
   
   .currently-playing-item {
@@ -41,7 +39,7 @@
   @media (min-width: 768px) {
     
     .currently-playing-item {
-      width: 200px; /* Aumenta el ancho en pantallas más grandes */
+      width: 200px; 
     }
     
     .currently-playing-item img:hover {

@@ -1,7 +1,9 @@
-import React from 'react';
+
+import React,{useState} from 'react';
 import useGenresAndMovies from '../../../hooks/useGenresAndMovies';
 import GenreButtons from './GenreButtons';
 import MovieDetail from '../../templates/MovieDetail';
+import SeeNow from '../../templates/SeeNow';
 import './Genre.css';
 
 const Genre: React.FC = () => {
@@ -18,6 +20,15 @@ const Genre: React.FC = () => {
     selectedGenre
   } = useGenresAndMovies();
 
+  const [showSeeNow, setShowSeeNow] = useState(false);
+
+  const handleSeeNowClick = () => {
+    setShowSeeNow(true);
+  };
+
+  const handleCloseSeeNow = () => {
+    setShowSeeNow(false);
+  };
   if (loading) return <p>Loading...</p>;
   if (error) return <p>{error}</p>;
 
@@ -55,9 +66,21 @@ const Genre: React.FC = () => {
 
 
       )}
-   {selectedMovie && (
-  <MovieDetail movie={selectedMovie} onClose={handleCloseDetail} />
-)}
+  {selectedMovie && (
+        <>
+          <MovieDetail
+            movie={selectedMovie}
+            onClose={handleCloseDetail}
+            onSeeNow={handleSeeNowClick}
+          />
+          {showSeeNow && (
+            <SeeNow
+              movieId={selectedMovie.id}
+              onClose={handleCloseSeeNow}
+            />
+          )}
+        </>
+      )}
 
 
     </div>

@@ -1,12 +1,21 @@
-import React from 'react';
+import React,{useState} from 'react';
 import useCurrentlyPlayingMovies from '../../../hooks/useFetchCurrentlyPlayingMovies';
 import MovieDetail from '../../templates/MovieDetail';
+import SeeNow from '../../templates/SeeNow';
 import './CurrentlyPlayingMoviesList.css';
 
 
 const CurrentlyPlayingMoviesList: React.FC = () => {
   const { movies, loading, error, selectedMovie, handleMovieClick, handleCloseDetail } = useCurrentlyPlayingMovies();
+  const [showSeeNow, setShowSeeNow] = useState(false);
 
+  const handleSeeNowClick = () => {
+    setShowSeeNow(true);
+  };
+
+  const handleCloseSeeNow = () => {
+    setShowSeeNow(false);
+  };
   if (loading) return <p>Cargando...</p>;
   if (error) return <p>Error: {error}</p>;
 
@@ -22,8 +31,20 @@ const CurrentlyPlayingMoviesList: React.FC = () => {
         </div>
       ))}
 
-      {selectedMovie && (
-        <MovieDetail movie={selectedMovie} onClose={handleCloseDetail} />
+{selectedMovie && (
+        <>
+          <MovieDetail
+            movie={selectedMovie}
+            onClose={handleCloseDetail}
+            onSeeNow={handleSeeNowClick}
+          />
+          {showSeeNow && (
+            <SeeNow
+              movieId={selectedMovie.id}
+              onClose={handleCloseSeeNow}
+            />
+          )}
+        </>
       )}
     </div>
   );

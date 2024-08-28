@@ -48,3 +48,11 @@ export interface Movie {
     selectedGenre: Genre | null;
   }
   
+
+  // for platforms
+
+export interface Platform {
+  provider_id: number;
+  provider_name: string;
+  logo_path: string; 
+}

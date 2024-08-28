@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { fetchFromApi } from '../api/api';
+import { Movie } from '../types/types';
 
 interface SearchResult {
   id: number;
@@ -12,6 +13,7 @@ const useSearch = (query: string) => {
   const [results, setResults] = useState<SearchResult[]>([]);
   const [loading, setLoading] = useState<boolean>(false);
   const [error, setError] = useState<string | null>(null);
+  const [selectedMovie, setSelectedMovie] = useState<Movie | null>(null);
 
   const handleSearch = async (query: string) => {
     if (!query) {
@@ -31,7 +33,23 @@ const useSearch = (query: string) => {
     }
   };
 
-  return { results, loading, error, handleSearch };
+  const handleMovieClick = (movie: Movie) => {
+    setSelectedMovie(movie);
+  };
+
+  const handleCloseDetail = () => {
+    setSelectedMovie(null);
+  };
+
+  return {
+    results,
+    loading,
+    error,
+    handleSearch,
+    handleMovieClick,
+    handleCloseDetail,
+    selectedMovie
+  };
 };
 
 export default useSearch;

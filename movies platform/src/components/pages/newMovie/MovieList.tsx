@@ -1,6 +1,7 @@
-import React from 'react';
+import React,{useState} from 'react';
 import useMovie from '../../../hooks/useFetchMovies';
 import MovieDetail from '../../templates/MovieDetail';
+import SeeNow from '../../templates/SeeNow';
 import './MovieList.css';
 
 function MovieList() {
@@ -13,8 +14,16 @@ function MovieList() {
     handleMouseEnter, 
     handleMovieClick, 
     handleCloseDetail 
-  } = useMovie();
+  } = useMovie(''); 
+  const [showSeeNow, setShowSeeNow] = useState(false);
 
+  const handleSeeNowClick = () => {
+    setShowSeeNow(true);
+  };
+
+  const handleCloseSeeNow = () => {
+    setShowSeeNow(false);
+  };
   if (loading) return <p>Cargando...</p>;
   if (error) return <p>Error: {error}</p>;
 
@@ -39,8 +48,20 @@ function MovieList() {
         </div>
       ))}
 
-      {selectedMovie && (
-        <MovieDetail movie={selectedMovie} onClose={handleCloseDetail} />
+{selectedMovie && (
+        <>
+          <MovieDetail
+            movie={selectedMovie}
+            onClose={handleCloseDetail}
+            onSeeNow={handleSeeNowClick}
+          />
+          {showSeeNow && (
+            <SeeNow
+              movieId={selectedMovie.id}
+              onClose={handleCloseSeeNow}
+            />
+          )}
+        </>
       )}
     </div>
   );
