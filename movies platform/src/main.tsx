@@ -7,6 +7,7 @@ import Template from './components/templates/template'
 import Genre from './components/pages/Genre/Genre.tsx'
 import Home from './components/pages/Home/Home.tsx';
 import TVSeries from './components/pages/TVSeries/TVSeries.tsx'
+import Search from './components/templates/Search/Search.tsx'
 
 
 const routes =createBrowserRouter([
@@ -29,6 +30,10 @@ const routes =createBrowserRouter([
   {
     path: '/TVSeries',
     element: <Template><TVSeries /></Template>
+  },
+  {
+    path: '/Search',
+    element: <Template><Search /></Template>
   }
 ]
 );

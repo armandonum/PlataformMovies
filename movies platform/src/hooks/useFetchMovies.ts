@@ -3,7 +3,7 @@ import { fetchFromApi } from '../api/api';
 
 import { Movie } from '../types/types';
 
-function useMovie() {
+function useMovie(_query: string) {
   const [movies, setMovies] = useState<Movie[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
