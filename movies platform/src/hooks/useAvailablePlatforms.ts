@@ -14,15 +14,10 @@ const useAvailablePlatforms = (movieId: number) => {
       try {
         const response = await fetchFromApi(`/movie/${movieId}?/watch/providers`);
         console.log('API Response:', response); 
+        setPlatforms(response.results.US.flatrate);
 
-        const usProviders = response.results?.US || {};
-        const combinedProviders = [
-          ...(usProviders.rent || []),
-          ...(usProviders.buy || []),
-          ...(usProviders.flat_rate || [])
-        ];
+  
         
-        setPlatforms(combinedProviders);
       } catch (err) {
         console.error('Error fetching platforms:', err);
         setError('Error loading platforms. Please try again later.');
