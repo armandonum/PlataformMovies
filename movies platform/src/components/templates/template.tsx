@@ -21,6 +21,10 @@ const routes =[
         href: '/TVSeries',
         text: 'TVSeries',
     },
+    {
+        href: '/Search',
+        text: '🔍',
+    },
    
 ];
 
