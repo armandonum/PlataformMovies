@@ -1,0 +1,48 @@
+.actor-list-container {
+  padding: 20px 0;
+  background-color: black;
+  color: white;
+  overflow-x: auto; 
+  white-space: nowrap; 
+  -webkit-overflow-scrolling: touch;
+  position: relative;
+}
+
+.actor-list-container::-webkit-scrollbar {
+  display: none;
+}
+
+
+.scroll-left {
+  left: 10px;
+}
+
+.scroll-right {
+  right: 10px;
+}
+
+.actor-list {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  padding: 0 10px;
+}
+
+.actor-item {
+  display: inline-block;
+  text-align: center;
+  flex: 0 0 auto;
+}
+
+.actor-image {
+  width: 120px;
+  height: 180px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  object-fit: cover;
+}
+
+.actor-item p {
+  margin-top: 5px;
+  font-size: 14px;
+}

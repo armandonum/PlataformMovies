@@ -1,10 +1,14 @@
 import React, { useState } from 'react';
 import './Search.css';
 import useSearch from '../../../hooks/useSearch';
+import SeeNow from '../SeeNow';
+import MovieDetail from '../MovieDetail';
+import { Movie } from '../../../types/types';
 
 const Search: React.FC = () => {
   const [query, setQuery] = useState('');
-  const { results, loading, error, handleSearch } = useSearch(query);
+  const { results,selectedMovie, loading, error, handleSearch,  handleMovieClick,
+    handleCloseDetail,} = useSearch(query);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setQuery(e.target.value);
@@ -12,6 +16,15 @@ const Search: React.FC = () => {
 
   const handleClose = () => {
     setQuery('');
+  };
+  const [showSeeNow, setShowSeeNow] = useState(false);
+
+  const handleSeeNowClick = () => {
+    setShowSeeNow(true);
+  };
+
+  const handleCloseSeeNow = () => {
+    setShowSeeNow(false);
   };
 
   React.useEffect(() => {
@@ -32,8 +45,8 @@ const Search: React.FC = () => {
       {error && <p>{error}</p>}
       <div className="results-container">
         {results.length > 0 ? (
-          results.map((item) => (
-            <div key={item.id} className="result-card">
+          results.map((item,index) => (
+            <div key={index} className="result-card" onClick={() => handleMovieClick(item as Movie)}>
               <img
                 src={`https://image.tmdb.org/t/p/w500${item.poster_path}`}
                 alt={item.title || item.name}
@@ -47,6 +60,21 @@ const Search: React.FC = () => {
           <p>No results found</p>
         )}
       </div>
+      {selectedMovie && (
+        <>
+          <MovieDetail
+            movie={selectedMovie}
+            onClose={handleCloseDetail}
+            onSeeNow={handleSeeNowClick}
+          />
+          {showSeeNow && (
+            <SeeNow
+              movieId={selectedMovie.id}
+              onClose={handleCloseSeeNow}
+            />
+          )}
+        </>
+      )}
     </div>
   );
 };

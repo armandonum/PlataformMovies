@@ -1,10 +1,6 @@
 import React from 'react';
+import {Genre}  from '../../../types/types';
 
-
-interface Genre {
-  id: number;
-  name: string;
-}
 
 interface GenreButtonsProps {
   genres: Genre[];

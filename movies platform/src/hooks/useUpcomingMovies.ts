@@ -1,14 +1,8 @@
 import { useState, useEffect } from 'react';
 import { fetchFromApi } from '../api/api';
+import { Movie } from '../types/types';
 
-interface Movie {
-  id: number;
-  title: string;
-  poster_path: string;
-  release_date: string;
-  vote_average: number;
-  overview: string;
-}
+
 
 function useUpcomingMovies() {
   const [movies, setMovies] = useState<Movie[]>([]);

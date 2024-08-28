@@ -10,7 +10,8 @@
   height: 100%;
   color: white;
   z-index: 1000;
-  overflow: hidden;
+
+
 }
 
 .movie-detail-container.active {
@@ -20,10 +21,9 @@
 .movie-detail-content {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  max-width: 1200px;
+
   width: 50%;
-  padding: 20px; /* Agrega espacio alrededor del contenido */
+  padding: 20px; 
 }
 
 .movie-detail-content img {
@@ -33,15 +33,15 @@
 }
 
 .movie-detail-info {
-
-
   margin-left: 20px; 
-  
-    word-wrap: break-word; 
-    overflow-wrap: break-word; 
-    white-space: normal; 
-  
-  
+ 
+
+  word-wrap: break-word; 
+  overflow-wrap: break-word; 
+  white-space: normal; 
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .movie-detail-info h2 {

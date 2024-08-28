@@ -1,6 +1,7 @@
-import React from 'react';
+import React, { useState } from 'react';
 import useHomeMovies from '../../../hooks/useHomeMovies';
 import MovieDetail from '../../templates/MovieDetail';
+import SeeNow from '../../templates/SeeNow';
 import './Home.css';
 
 const Home: React.FC = () => {
@@ -15,6 +16,16 @@ const Home: React.FC = () => {
     handleNext,
     handlePrev
   } = useHomeMovies();
+
+  const [showSeeNow, setShowSeeNow] = useState(false);
+
+  const handleSeeNowClick = () => {
+    setShowSeeNow(true);
+  };
+
+  const handleCloseSeeNow = () => {
+    setShowSeeNow(false);
+  };
 
   if (loading) return <p>Loading...</p>;
   if (error) return <p>{error}</p>;
@@ -47,7 +58,19 @@ const Home: React.FC = () => {
       </div>
 
       {selectedMovie && (
-        <MovieDetail movie={selectedMovie} onClose={handleCloseDetail} />
+        <>
+          <MovieDetail
+            movie={selectedMovie}
+            onClose={handleCloseDetail}
+            onSeeNow={handleSeeNowClick}
+          />
+          {showSeeNow && (
+            <SeeNow
+              movieId={selectedMovie.id}
+              onClose={handleCloseSeeNow}
+            />
+          )}
+        </>
       )}
     </div>
   );
