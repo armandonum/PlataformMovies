@@ -1,6 +1,6 @@
 import React,{useState} from 'react';
 import useMovie from '../../../hooks/useFetchMovies';
-import MovieDetail from '../../templates/MovieDetail';
+import MovieDetail from '../../templates/moviedetails/MovieDetail';
 import SeeNow from '../../templates/SeeNow';
 import './MovieList.css';
 

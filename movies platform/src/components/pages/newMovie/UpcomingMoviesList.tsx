@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import useUpcomingMovies from '../../../hooks/useUpcomingMovies';
 import './UpcomingMoviesList.css';
-import MovieDetail from '../../templates/MovieDetail';
+import MovieDetail from '../../templates/moviedetails/MovieDetail';
 import SeeNow from '../../templates/SeeNow';
 
 

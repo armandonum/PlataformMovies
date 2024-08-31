@@ -2,7 +2,7 @@
 import React,{useState} from 'react';
 import useGenresAndMovies from '../../../hooks/useGenresAndMovies';
 import GenreButtons from './GenreButtons';
-import MovieDetail from '../../templates/MovieDetail';
+import MovieDetail from '../../templates/moviedetails/MovieDetail';
 import SeeNow from '../../templates/SeeNow';
 import './Genre.css';
 

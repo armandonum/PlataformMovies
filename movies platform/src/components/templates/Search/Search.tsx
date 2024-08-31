@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import './Search.css';
 import useSearch from '../../../hooks/useSearch';
 import SeeNow from '../SeeNow';
-import MovieDetail from '../MovieDetail';
+import MovieDetail from '../moviedetails/MovieDetail';
 import { Movie } from '../../../types/types';
 
 const Search: React.FC = () => {

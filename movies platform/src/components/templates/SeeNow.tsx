@@ -1,4 +1,3 @@
-
 import React from 'react';
 import useActors from '../../hooks/useActors';
 import useTrailer from '../../hooks/useTrailer';
@@ -10,16 +9,17 @@ import './SeeNow.css';
 interface SeeNowProps {
   movieId: number;
   onClose: () => void;
+  isTVSeries?: boolean;
 }
 
-const SeeNow: React.FC<SeeNowProps> = ({ movieId, onClose }) => {
+const SeeNow: React.FC<SeeNowProps> = ({ movieId, onClose, isTVSeries = false }) => {
   const { actors, loading: actorsLoading, error: actorsError } = useActors(movieId);
   const { trailer, loading: trailerLoading, error: trailerError } = useTrailer(movieId);
   const { platforms, loading: platformsLoading, error: platformsError } = useAvailablePlatforms(movieId);
 
   return (
     <div className="see-now-wrapper">
-      <button className="close-button" onClick={onClose}>
+      <button className="close-button_pla" onClick={onClose}>
         x
       </button>
       
@@ -35,21 +35,38 @@ const SeeNow: React.FC<SeeNowProps> = ({ movieId, onClose }) => {
               width="560"
               height="315"
               src={trailer}
-             
+              title="Movie Trailer"
+              frameBorder="0"
+              allowFullScreen
             ></iframe>
           ) : (
             <p>No trailer available</p>
           )}
         </div>
       </div>
-      
-      <PlatformList platforms={platforms} />
+
+      <div className='platforms-container'>
+        <h2>Available on</h2>
+        {platformsLoading ? (
+          <p>Loading platforms...</p>
+        ) : platformsError ? (
+          <p>{platformsError}</p>
+        ) : (
+          <PlatformList platforms={platforms} />
+        )}
+      </div>
 
       <div className='actors-container'>
         <h2>Actors</h2>
-        <div className='actors-content'>
-          <ActorList actors={actors} />
-        </div>
+        {actorsLoading ? (
+          <p>Loading actors...</p>
+        ) : actorsError ? (
+          <p>{actorsError}</p>
+        ) : (
+          <div className='actors-content'>
+            <ActorList actors={actors} />
+          </div>
+        )}
       </div>
     </div>
   );

@@ -35,23 +35,46 @@
   margin: 0 15px; /* Espacio entre los ítems */
 }
 
-/* Estilo para los enlaces del menú */
 .horizontal-menu-item a {
-  color: white;
-  font-size: large;
+  color: #f0f0f0;
+  font-size: 1.2em;
   text-decoration: none;
-  font-family: 'Times New Roman', Times, serif;
+  position: relative; 
+  transition: color 0.3s ease; 
 }
 
-/* Estilo para el fondo de las páginas */
+.horizontal-menu-item a:hover {
+  color: #00c6ff; 
+}
+
+
+.horizontal-menu-item a::before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  background: #00c6ff;
+  bottom: -5px;
+  left: 0;
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.3s ease;
+}
+
+.horizontal-menu-item a:hover::before {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
 body {
   margin: 0;
   padding: 0;
+  background: linear-gradient(120deg, #2b2b2b, #1f1f1f);
   background-color: black;
   color: white;
 }
 
-/* Estilo responsivo para pantallas pequeñas */
+
 @media (max-width: 768px) {
   .horizontal-menu {
       flex-direction: column;
@@ -66,5 +89,6 @@ body {
 @media (max-width: 480px) {
   .horizontal-menu-item a {
       font-size: medium;
+      font-size: 1em;
   }
 }
