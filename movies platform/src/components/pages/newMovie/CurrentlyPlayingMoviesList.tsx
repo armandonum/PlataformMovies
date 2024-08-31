@@ -1,6 +1,6 @@
 import React,{useState} from 'react';
 import useCurrentlyPlayingMovies from '../../../hooks/useFetchCurrentlyPlayingMovies';
-import MovieDetail from '../../templates/moviedetails/MovieDetail';
+import MovieDetail from '../../../components/templates/moviedetails/MovieDetail';
 import SeeNow from '../../templates/SeeNow';
 import './CurrentlyPlayingMoviesList.css';
 
