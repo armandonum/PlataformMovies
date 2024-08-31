@@ -40,17 +40,17 @@ const SeeNow: React.FC<SeeNowProps> = ({ movieId, onClose, isTVSeries = false })
               allowFullScreen
             ></iframe>
           ) : (
-            <p>No trailer available</p>
+            <p></p>
           )}
         </div>
       </div>
 
       <div className='platforms-container'>
-        <h2>Available on</h2>
+        
         {platformsLoading ? (
           <p>Loading platforms...</p>
         ) : platformsError ? (
-          <p>{platformsError}</p>
+          <p></p>
         ) : (
           <PlatformList platforms={platforms} />
         )}

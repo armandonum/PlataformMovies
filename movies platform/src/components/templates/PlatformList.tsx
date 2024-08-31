@@ -17,11 +17,11 @@ const PlatformList: React.FC<PlatformListProps> = ({ platforms }) => {
       case 'amazon prime video':
         return `https://www.amazon.com/dp/${movieId}`;
       default:
-        return '#'; // URL predeterminada si no se encuentra la plataforma
+        return '#'; 
     }
   };
 
-  return (
+ return (
     <div className='platform-list'>
       {platforms.length > 0 ? (
         platforms.map(platform => (
@@ -34,7 +34,7 @@ const PlatformList: React.FC<PlatformListProps> = ({ platforms }) => {
           </div>
         ))
       ) : (
-        <p>No platforms available</p>
+        <p></p>
       )}
     </div>
   );
