@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import useFetchTVSeries from '../../../hooks/useFetchTVSeries';
-import MovieDetail from '../../templates/MovieDetail';
+import MovieDetail from '../../templates/moviedetails/MovieDetail';
 import SeeNow from '../../templates/SeeNow';
 import './TVSeries.css';
 
@@ -46,6 +46,7 @@ const TVSeries: React.FC = () => {
             <SeeNow
               movieId={selectedMovie.id}
               onClose={handleCloseSeeNow}
+              isTVSeries={true}
             />
           )}
         </>

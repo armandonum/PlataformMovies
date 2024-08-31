@@ -13,3 +13,4 @@ export const fetchFromApi = async (endpoint: string) => {
     throw new Error(`Failed to fetch data: ${( error as any).message}`);
   }
 };
+

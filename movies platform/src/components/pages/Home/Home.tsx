@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import useHomeMovies from '../../../hooks/useHomeMovies';
-import MovieDetail from '../../templates/MovieDetail';
+import MovieDetail from '../../templates/moviedetails/MovieDetail';
 import SeeNow from '../../templates/SeeNow';
 import './Home.css';
 
