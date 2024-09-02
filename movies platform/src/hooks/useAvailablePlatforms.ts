@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { fetchFromApi } from '../api/api'; // Asegúrate de que esta función esté correcta
+import { fetchFromApi } from '../api/api';
 import { Platform } from '../types/types';
 
 const useAvailablePlatforms = (movieId: number) => {
@@ -11,8 +11,8 @@ const useAvailablePlatforms = (movieId: number) => {
     const fetchPlatforms = async () => {
       try {
         const response = await fetchFromApi(`/movie/${movieId}/watch/providers?`);
-        if (response.results) {
-          const platformsData = response.results.flatMap((region: any) =>
+        if (response.results?.US) { 
+          const platformsData = response.results.US.flatMap((region: any) =>
             region.providers.map((provider: any) => ({
               provider_id: provider.provider_id,
               provider_name: provider.provider_name,
