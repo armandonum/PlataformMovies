@@ -19,7 +19,7 @@ const SeeNow: React.FC<SeeNowProps> = ({ movieId, onClose, isTVSeries = false })
 
   return (
     <div className="see-now-wrapper">
-      <button className="close-button_pla" onClick={onClose}>
+      <button className="close-button_pla" onClick={onClose} aria-label="Close">
         x
       </button>
       
@@ -40,20 +40,16 @@ const SeeNow: React.FC<SeeNowProps> = ({ movieId, onClose, isTVSeries = false })
               allowFullScreen
             ></iframe>
           ) : (
-            <p>No trailer available</p>
+            <p>No trailer available.</p>
           )}
         </div>
       </div>
 
       <div className='platforms-container'>
-        <h2>Available on</h2>
-        {platformsLoading ? (
-          <p>Loading platforms...</p>
-        ) : platformsError ? (
-          <p>{platformsError}</p>
-        ) : (
+       
+       
           <PlatformList platforms={platforms} />
-        )}
+        
       </div>
 
       <div className='actors-container'>

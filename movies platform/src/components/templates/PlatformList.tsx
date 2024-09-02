@@ -17,24 +17,30 @@ const PlatformList: React.FC<PlatformListProps> = ({ platforms }) => {
       case 'amazon prime video':
         return `https://www.amazon.com/dp/${movieId}`;
       default:
-        return '#'; // URL predeterminada si no se encuentra la plataforma
+        return '#';
     }
   };
 
   return (
     <div className='platform-list'>
-      {platforms.length > 0 ? (
+      {true ? (
         platforms.map(platform => (
           <div key={platform.provider_id} className='platform-item'>
-            <button 
+            <button
               onClick={() => window.open(generatePlatformUrl(platform.provider_name, platform.provider_id), '_blank')}
             >
+              <img
+                src={`https://image.tmdb.org/t/p/w45${platform.logo_path}`}
+                alt={platform.provider_name}
+                className='platform-logo'
+              />
               Watch on {platform.provider_name}
             </button>
           </div>
         ))
       ) : (
-        <p>No platforms available</p>
+        
+        <p></p>
       )}
     </div>
   );
