@@ -6,6 +6,10 @@ type Props= {
 
 const routes =[
     {
+        href: '/',
+        text: '★',
+    },
+    {
         href: '/Home',
         text: 'Home',
     },
