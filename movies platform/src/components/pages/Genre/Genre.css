@@ -1,0 +1,150 @@
+.genre-container {
+  background-color: #000; /* Fondo negro */
+  color: #fff; /* Texto blanco */
+  padding: 10px;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.genre-title {
+  font-size: 2em;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+/* Genre Section */
+.genre-section {
+
+  /* margin-bottom: 40px; */
+  display: flex;
+  flex-wrap: wrap;
+
+  flex-direction:column;
+  justify-content: center;
+
+}
+
+/* Genre List */
+.genre-list {
+  display: flex;
+  flex-wrap: wrap;
+ 
+
+   gap: 20px;
+justify-content:center;
+}
+
+
+.genre-item {
+  
+  background-color: #911111;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+  width: 150px;
+  text-align: center;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.genre-item:hover {
+  transform: scale(1.05);
+}
+
+.genre-item img {
+  width: 100%;
+  height: auto;
+  max-height: 100px;
+  object-fit: cover;
+}
+
+.genre-item-title, .genre-item-overview {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  color: white;
+  padding: 10px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  text-align: center;
+}
+
+.genre-item:hover .genre-item-title, .genre-item:hover .genre-item-overview {
+  opacity: 1;
+}
+
+/* Genre Detail */
+.genre-detail {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+}
+
+.genre-detail-title {
+  font-size: 2em;
+  margin-bottom: 20px;
+  align-self: flex-start;
+  width: 100%;
+}
+
+.back-button {
+  background-color: #1e90ff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 15px;
+  cursor: pointer;
+  font-size: 0.9em;
+  align-self: flex-start;
+}
+
+.back-button:hover {
+  background-color: #1c86ee;
+}
+
+/* Movies List */
+.movie-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+.movie-item {
+  display: flex;
+  flex-direction: column;
+  background-color: rgb(9, 10, 10);
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+  width: 200px;
+}
+
+.movie-item img {
+  width: 100%;
+  height: auto;
+  max-height: 300px;
+  object-fit: cover;
+}
+
+.movie-item:hover {
+  transform: scale(1.05);
+}
+
+/* Media Query for Mobile Devices */
+@media (max-width: 600px) {
+  .back-button {
+    align-self: center;
+  }
+
+  .genre-detail-title {
+    text-align: center;
+    align-self: center;
+  }
+}
