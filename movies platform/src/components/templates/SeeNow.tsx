@@ -12,10 +12,10 @@ interface SeeNowProps {
   isTVSeries?: boolean;
 }
 
-const SeeNow: React.FC<SeeNowProps> = ({ movieId, onClose, isTVSeries = false }) => {
+const SeeNow: React.FC<SeeNowProps> = ({ movieId, onClose }) => {
   const { actors, loading: actorsLoading, error: actorsError } = useActors(movieId);
   const { trailer, loading: trailerLoading, error: trailerError } = useTrailer(movieId);
-  const { platforms, loading: platformsLoading, error: platformsError } = useAvailablePlatforms(movieId);
+  const { platforms } = useAvailablePlatforms(movieId);
 
   return (
     <div className="see-now-wrapper">

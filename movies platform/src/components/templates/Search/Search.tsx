@@ -8,15 +8,13 @@ import { Movie } from '../../../types/types';
 const Search: React.FC = () => {
   const [query, setQuery] = useState('');
   const { results,selectedMovie, loading, error, handleSearch,  handleMovieClick,
-    handleCloseDetail,} = useSearch(query);
+    handleCloseDetail,} = useSearch();
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setQuery(e.target.value);
   };
 
-  const handleClose = () => {
-    setQuery('');
-  };
+
   const [showSeeNow, setShowSeeNow] = useState(false);
 
   const handleSeeNowClick = () => {

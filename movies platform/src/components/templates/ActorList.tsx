@@ -7,11 +7,6 @@ interface ActorListProps {
 }
 
 const ActorList: React.FC<ActorListProps> = ({ actors }) => {
-  const scrollList = (direction: string) => {
-    const container = document.querySelector('.actor-list-container') as HTMLElement;
-    const scrollAmount = direction === 'left' ? -container.offsetWidth : container.offsetWidth;
-    container.scrollBy({ left: scrollAmount, behavior: 'smooth' });
-  };
 
   return (
     <div className="actor-list-container">

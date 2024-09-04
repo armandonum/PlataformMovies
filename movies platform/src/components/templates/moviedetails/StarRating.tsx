@@ -6,7 +6,7 @@ interface StarRatingProps {
   maxRating?: number;
 }
 
-const StarRating: React.FC<StarRatingProps> = ({ rating, maxRating = 10 }) => {
+const StarRating: React.FC<StarRatingProps> = ({ rating  }) => {
   const fullStars = Math.floor(rating / 2);
   const halfStar = rating % 2 >= 1 ? 1 : 0;
   const emptyStars = 5 - fullStars - halfStar;

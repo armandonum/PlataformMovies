@@ -9,7 +9,7 @@ interface SearchResult {
   poster_path: string;
 }
 
-const useSearch = (query: string) => {
+const useSearch = () => {
   const [results, setResults] = useState<SearchResult[]>([]);
   const [loading, setLoading] = useState<boolean>(false);
   const [error, setError] = useState<string | null>(null);
